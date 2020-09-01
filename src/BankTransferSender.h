@@ -7,11 +7,14 @@
 
 #include "IPaymentBankTransfer.h"
 
-class BankTransferSender : public IPaymentBankTransfer {
+class BankTransferSender {
+    IPaymentBankTransfer* processBankTransfer;
 public:
-    ~BankTransferSender();
+    BankTransferSender(IPaymentBankTransfer*);
 
-    std::string processPaymentBankTransfer() const override;
+    virtual ~BankTransferSender();
+
+    std::string sendPayment() const;
 };
 
 

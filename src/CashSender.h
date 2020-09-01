@@ -7,11 +7,14 @@
 
 #include "IPaymentCash.h"
 
-class CashSender : public IPaymentCash {
+class CashSender {
+    IPaymentCash* processPaymentCash;
 public:
+    CashSender(IPaymentCash*);
+
     virtual ~CashSender();
 
-    std::string processPaymentCash() const override;
+    std::string sendPayment() const;
 };
 
 

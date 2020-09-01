@@ -4,8 +4,10 @@
 
 #include "BankTransferSender.h"
 
-BankTransferSender::~BankTransferSender() {}
+BankTransferSender::BankTransferSender(IPaymentBankTransfer *pay) : processBankTransfer(pay) {}
 
-std::string BankTransferSender::processPaymentBankTransfer() const {
-    return "Sending the money by transference";
+BankTransferSender::~BankTransferSender() { delete processBankTransfer; }
+
+std::string BankTransferSender::sendPayment() const {
+    return processBankTransfer->processPaymentBankTransfer();
 }

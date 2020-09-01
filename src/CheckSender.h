@@ -7,9 +7,14 @@
 
 #include "IPaymentCheck.h"
 
-class CheckSender : public IPaymentCheck {
+class CheckSender {
+    IPaymentCheck* processPaymentCheck;
 public:
-    std::string processPaymentCheck() const override;
+    CheckSender(IPaymentCheck*);
+
+    virtual ~CheckSender();
+
+    std::string sendPayment() const;
 };
 
 

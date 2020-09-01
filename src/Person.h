@@ -5,6 +5,9 @@
 #include "IPaymentBankTransfer.h"
 #include "IPaymentCash.h"
 #include "IPaymentCheck.h"
+#include "BankTransferSender.h"
+#include "CashSender.h"
+#include "CheckSender.h"
 
 /**
  * Abstract Class of Person
@@ -30,9 +33,9 @@ public:
 
     void setDocumentId(int documentId);
 
-    /*std::string processPaymentBankTransfer();
-    std::string processPaymentCash();
-    std::string processPaymentCheck();*/
+    std::string processPaymentBankTransfer() const override;
+    std::string processPaymentCash() const override;
+    std::string processPaymentCheck() const override;
 
     virtual std::string toString() const; // Virtual
 private:
