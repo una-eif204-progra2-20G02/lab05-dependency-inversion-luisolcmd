@@ -4,6 +4,8 @@
 
 #include "BankTransferSender.h"
 
-std::string  BankTransferSender::sendPayment() const {
+BankTransferSender::~BankTransferSender() {}
+
+std::string BankTransferSender::sendPayment() const {
     return "Sending the money by transference";
 }

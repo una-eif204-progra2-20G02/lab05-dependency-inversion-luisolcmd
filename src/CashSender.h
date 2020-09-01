@@ -5,11 +5,13 @@
 #ifndef LAB05_DEPENDENCY_INVERSION_SOLUTION_CASHSENDER_H
 #define LAB05_DEPENDENCY_INVERSION_SOLUTION_CASHSENDER_H
 
-#include <string>
+#include "IPaymentCash.h"
 
-class CashSender {
+class CashSender : public IPaymentCash {
 public:
-    std::string sendPayment() const;
+    virtual ~CashSender();
+
+    std::string sendPayment() const override;
 };
 
 
