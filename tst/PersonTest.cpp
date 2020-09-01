@@ -7,15 +7,18 @@
 
 TEST(TransferTestSuite, VerifyProcessPayment) {
     IPaymentBankTransfer *Transfer = new Person();
-    EXPECT_EQ(Transfer->processPaymentBankTransfer(), "Sending the money by transference");
+    BankTransferSender bankTransferSender(Transfer);
+    EXPECT_EQ(bankTransferSender.sendPayment(), "Sending the money by transference");
 }
 
 TEST(CashTestSuite, VerifyProcessPayment) {
     IPaymentCash *Cash = new Person();
-    EXPECT_EQ(Cash->processPaymentCash(), "Give the money in the hands");
+    CashSender cashSender(Cash);
+    EXPECT_EQ(cashSender.sendPayment(), "Give the money in the hands");
 }
 
 TEST(CheckTestSuite, VerifyProcessPayment) {
     IPaymentCheck *Check = new Person();
-    EXPECT_EQ(Check->processPaymentCheck(), "Sending the check with the money");
+    CheckSender checkSender(Check);
+    EXPECT_EQ(checkSender.sendPayment(), "Sending the check with the money");
 }
