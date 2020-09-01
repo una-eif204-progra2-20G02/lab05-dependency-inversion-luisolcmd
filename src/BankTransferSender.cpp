@@ -6,6 +6,6 @@
 
 BankTransferSender::~BankTransferSender() {}
 
-std::string BankTransferSender::sendPayment() const {
+std::string BankTransferSender::processPaymentBankTransfer() const {
     return "Sending the money by transference";
 }

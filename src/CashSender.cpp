@@ -6,6 +6,6 @@
 
 CashSender::~CashSender() {}
 
-std::string CashSender::sendPayment() const {
+std::string CashSender::processPaymentCash() const {
     return "Give the money in the hands";
 }

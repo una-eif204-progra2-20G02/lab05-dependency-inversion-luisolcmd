@@ -9,7 +9,7 @@
 
 class CheckSender : public IPaymentCheck {
 public:
-    std::string sendPayment() const override;
+    std::string processPaymentCheck() const override;
 };
 
 

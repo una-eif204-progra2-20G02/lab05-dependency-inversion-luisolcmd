@@ -7,7 +7,7 @@ class IPaymentCheck {
 public:
     virtual ~IPaymentCheck();
 
-    virtual std::string sendPayment() const = 0;
+    virtual std::string processPaymentCheck() const = 0;
 };
 
 

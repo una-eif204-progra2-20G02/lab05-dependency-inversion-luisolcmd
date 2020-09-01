@@ -7,7 +7,7 @@ class IPaymentBankTransfer {
 public:
     virtual ~IPaymentBankTransfer();
 
-    virtual std::string sendPayment() const=0;
+    virtual std::string processPaymentBankTransfer() const=0;
 };
 
 #endif //MY_PROJECT_NAME_IPAYMENTBANKTRANSFER_H

@@ -11,7 +11,7 @@ class CashSender : public IPaymentCash {
 public:
     virtual ~CashSender();
 
-    std::string sendPayment() const override;
+    std::string processPaymentCash() const override;
 };
 
 

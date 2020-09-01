@@ -1,7 +1,6 @@
 #ifndef UNIT_TESTING_01_GTEST_PERSON_H
 #define UNIT_TESTING_01_GTEST_PERSON_H
 
-#include <string>
 #include <ostream>
 #include "IPaymentBankTransfer.h"
 #include "IPaymentCash.h"
