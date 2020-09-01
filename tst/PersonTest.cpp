@@ -2,23 +2,22 @@
 // Created by Maikol Guzman on 8/24/20.
 //
 
+#include <IPaymentSender.h>
 #include <Person.h>
+#include <BankTransferSender.h>
+#include <CashSender.h>
+#include <CheckSender.h>
 #include "gtest/gtest.h"
 
-TEST(TransferTestSuite, VerifyProcessPayment) {
-    IPaymentBankTransfer *Transfer = new Person();
-    BankTransferSender bankTransferSender(Transfer);
-    EXPECT_EQ(bankTransferSender.sendPayment(), "Sending the money by transference");
-}
+TEST(PersonTestSuite, VerifyProcessPayment) {
+    IPaymentSender *Transfer = new BankTransferSender();
+    IPaymentSender *Cash = new CashSender();
+    IPaymentSender *Check = new CheckSender();
 
-TEST(CashTestSuite, VerifyProcessPayment) {
-    IPaymentCash *Cash = new Person();
-    CashSender cashSender(Cash);
-    EXPECT_EQ(cashSender.sendPayment(), "Give the money in the hands");
-}
+    Person person;
 
-TEST(CheckTestSuite, VerifyProcessPayment) {
-    IPaymentCheck *Check = new Person();
-    CheckSender checkSender(Check);
-    EXPECT_EQ(checkSender.sendPayment(), "Sending the check with the money");
+    EXPECT_EQ(person.processPayment(Transfer),"Sending the money by transference");
+    EXPECT_EQ(person.processPayment(Cash),"Give the money in the hands");
+    EXPECT_EQ(person.processPayment(Check),"Sending the check with the money");
+
 }

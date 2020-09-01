@@ -34,18 +34,10 @@ void Person::setDocumentId(int documentId) {
     Person::documentId = documentId;
 }
 
+std::string Person::processPayment(IPaymentSender *paymentSender) {
+    return paymentSender->processPayment();
+}
+
 std::string Person::toString() const {
     return getFirstName() + " " + getLastName() + "\nDoc Id: " + std::to_string(getDocumentId());
-}
-
-std::string Person::processPaymentBankTransfer() const {
-    return "Sending the money by transference";
-}
-
-std::string Person::processPaymentCash() const {
-    return "Give the money in the hands";
-}
-
-std::string Person::processPaymentCheck() const {
-    return "Sending the check with the money";
 }

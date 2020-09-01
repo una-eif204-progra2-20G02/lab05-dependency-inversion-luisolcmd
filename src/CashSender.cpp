@@ -4,10 +4,6 @@
 
 #include "CashSender.h"
 
-CashSender::CashSender(IPaymentCash *pay) : processPaymentCash(pay) {}
-
-CashSender::~CashSender() { delete processPaymentCash; }
-
-std::string CashSender::sendPayment() const {
-    return processPaymentCash->processPaymentCash();
+std::string CashSender::processPayment() const {
+    return "Give the money in the hands";
 }

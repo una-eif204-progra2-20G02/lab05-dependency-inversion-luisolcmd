@@ -4,10 +4,6 @@
 
 #include "CheckSender.h"
 
-CheckSender::CheckSender(IPaymentCheck *pay) : processPaymentCheck(pay) {}
-
-CheckSender::~CheckSender() {delete processPaymentCheck;}
-
-std::string CheckSender::sendPayment() const {
-    return processPaymentCheck->processPaymentCheck();
+std::string CheckSender::processPayment() const {
+    return "Sending the check with the money";
 }

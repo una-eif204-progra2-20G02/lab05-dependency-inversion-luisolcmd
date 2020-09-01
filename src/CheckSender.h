@@ -5,16 +5,10 @@
 #ifndef LAB05_DEPENDENCY_INVERSION_SOLUTION_CHECKSENDER_H
 #define LAB05_DEPENDENCY_INVERSION_SOLUTION_CHECKSENDER_H
 
-#include "IPaymentCheck.h"
+#include "IPaymentSender.h"
 
-class CheckSender {
-    IPaymentCheck* processPaymentCheck;
-public:
-    CheckSender(IPaymentCheck*);
-
-    virtual ~CheckSender();
-
-    std::string sendPayment() const;
+class CheckSender : public IPaymentSender {
+    std::string processPayment() const override;
 };
 
 
